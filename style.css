@@ -1,0 +1,169 @@
+:root {
+    --primarybackground: rgb(186, 202, 213);
+    --secondarybackground: rgb(108, 127, 136);
+    --primarytext: rgb(31, 33, 29);
+    --primarybutton: rgb(67, 78, 81);
+    --secondarytext: rgb(149, 170, 183);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--primarybackground);
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secondarybackground);
+    padding: 15px;
+}
+
+.nav form {
+    background-color: var(--primarybackground);
+    padding: 5px;
+    width: 25%;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.nav form input {
+    margin: 3px 5px 3px 7px;
+    width: 80%;
+    height: 25px;
+    padding: 5px;
+    border: none;
+    background-color: var(--primarybackground);
+    outline: none;
+}
+
+.current-update {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secondarybackground);
+    padding: 20px;
+    width: 30rem;
+    height: 14rem;
+    border-radius: 10px;
+}
+
+.title {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background: var(--primarybackground);
+    color: black;
+    outline: none;
+    opacity: 0.2;
+}
+
+.description {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    resize: none;
+    background-color: var(--primarybackground);
+    color: black;
+    border: none;
+    outline: none;
+    opacity: 0.2;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+.input-container button {
+    background-color: var(--primarybutton);
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    margin-top: 10px;
+    color: var(--primarybackground);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    flex-wrap: wrap;
+}
+
+.task-card {
+    background-color: blue;
+    min-height: 5rem;
+    height: auto;
+    width: 15rem;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#edit {
+    background-color: rgb(0, 128, 0, 0.8);
+    color: rgb(146, 226, 146);
+    padding: 2px;
+    width: 50px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#delete {
+    background-color: rgb(255, 0, 0, 0.8);
+    color: rgb(230, 156, 156);
+    padding: 2px;
+    width: 50px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#edit:hover,
+#delete:hover {
+    width: 55px;
+    color: black
+}
+
+/* .task-card label{
+    border: none;
+    width: 50px;
+    background-color: blueviolet;
+} */
+.task-card select {
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    padding: 2px;
+    width: 60px;
+    outline: none;
+    cursor: pointer;
+}

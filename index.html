@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TaskMate</title>
+</head>
+
+<body>
+    <div class="nav">
+        <h1>TaskMate</h1>
+        <form>
+            <input type="search" placeholder="Search..." id="search">
+        </form>
+        <h1>Sandip Shah</h1>
+    </div>
+    <div class="current-update">
+        <p><span id="date-time"></span></p>
+    </div>
+    <div class="input-container">
+        <input type="text" id="title" class="title" placeholder="Title">
+        <textarea placeholder="Description..." id="descp" class="description"></textarea>
+        <button type="button" id="addBtn">Add Task</button>
+    </div>
+    <hr>
+    <h2>Your Tasks</h2>
+    <hr>
+    <div class="container" id="container">
+        <div class="task-card">
+            <h3>Title</h3>
+            <p>Description</p>
+            <div>
+                <button id="delete">Delete</button>
+                <button id="edit">Edit</button>
+                <label for="Task-Status">Status: </label>
+                <select name="Task-Status" id="task-Status">
+                    <option value="task">Task</option>
+                    <option value="doing">Doing</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
