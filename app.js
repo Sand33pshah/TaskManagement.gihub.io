@@ -2,7 +2,7 @@
 
 var dt = new Date();
 Day = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
-Time = dt.getHours() + " : " + dt.getMinutes();
+Time = String(dt.getHours()).padStart(2,"0") + " : " + String(dt.getMinutes()).padStart(2,"0");
 var today = dt.getFullYear() + " / " + (dt.getMonth() + 1) + " / " + dt.getDate() + " | " + Day[dt.getDay()] + " | " + Time;
 document.getElementById('date-time').innerHTML = today;
 
