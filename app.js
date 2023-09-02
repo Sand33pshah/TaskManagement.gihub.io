@@ -19,13 +19,19 @@ addTask.addEventListener('click', () => {
     }
     let title = document.getElementById("title")
     let descp = document.getElementById("descp");
+    let status = document.getElementById("taskStatus") //change---------
 
     console.log(title.value);
     console.log(descp.value);
-
+    console.log(status.value);               //change
+    if(title.value == ""){
+        alert("Please enter task first")
+        return false;
+    }
     let newNoteObj = {
         title: title.value,
-        descp: descp.value
+        descp: descp.value,
+        status: status.value            //change
     }
 
     if (addTask.innerText === "Update Task") {
@@ -66,7 +72,7 @@ function showMyTasks() {
                                 <button id="delete" onclick="deleteTask(${index})" >Delete</button>
                                 <button id="edit" onclick="editTask(${index})" >Edit</button>
                                 <label for="Task-Status">Status: </label>
-                                <select name="Task-Status" id="task-Status">
+                                <select name="status" id="taskStatus" onchange="changeStatus(this, ${index})">
                                     <option value="task">Task</option>
                                     <option value="doing">Doing</option>
                                     <option value="done">Done</option>
@@ -121,4 +127,32 @@ search.addEventListener('input', () => {
     })
 })
 
+//To change the color of the task card
 
+
+function changeStatus(selectedElement, taskIndex){
+    // console.log("Changing Status")
+    // let allTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    let taskcard = selectedElement.closest('.task-card');
+
+    if(selectedElement.value == 'task'){
+        taskcard.style.backgroundColor = 'rgb(108, 127, 136)';
+        taskcard.style.textDecoration = 'none';
+    }
+    else if(selectedElement.value == 'doing'){
+        taskcard.style.backgroundColor = 'lightyellow';
+        taskcard.style.textDecoration = 'none';
+    }
+    else if(selectedElement.value == "done"){
+        taskcard.style.backgroundColor = 'rgb(67, 78, 81)';
+        taskcard.style.textDecoration = 'line-through';
+    }
+
+    // let status = document.getElementById("taskStatus")
+    // status = selectedElement.value
+    // allTasks[taskIndex].setAttribute('status') = selectedElement.value
+
+
+    // localStorage.setItem("tasks", JSON.stringify(allTasks));
+}
